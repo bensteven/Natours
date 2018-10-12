@@ -125,22 +125,80 @@ body{
 
 }
 
+@keyframes moveInBottom{
+	/* Position and behaviour */
+	0%{
+		opacity: 0;
+		transform: translateY(30px)
+	}
+
+	
+
+	100%{
+		opacity: 1;
+		transform: translate(0)
+	}
+
+}
+/* Styling the link button on the header */
 .btn:link,
 .btn:visited{
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 15px 40px;
 	display: inline-block;
+	border-radius: 100px;
+	/* add transition for .btn as this is its initail state */
+	transition: all .2s;
+	position: relative;
 }
 .btn:hover{
 	/* button behaviour on hover */
 	transform: translateY(-3px);
+	/* box shadow on hover x y direction, blur , rgba shadow */
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 .btn:active{
 	/* button behaviour on clicking it */
 	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+
 }
 .btn-white{
 	background-color: #fff;
 	color: #777;
+}
+/* create a pseudo button */
+.btn::after{
+
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+	/* hide it behind to the button */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: -1;
+	/* transition for btn:hover::after on this as its initial state; */
+	transition: all .4s;
+}
+
+.btn-white::after{
+	background-color: #fff;
+}
+.btn:hover::after{
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.btn-animated{
+	/* animation name, animation duration
+	 animation timing funtion animation delay  */
+	animation: moveInBottom .5s ease-out .75s;
+	/* apply animation of 0% before it starts */
+	animation-fill-mode: backwards;
+
 }
