@@ -1,0 +1,17 @@
+/* Basic Reset */
+
+*, *::after, *::before{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+/* Set the root font size in the html tag then use rem in other tags */
+html{
+	/* Default browser fontsize is 16px 
+	but we want ours to be 10px so we say 10px/16px x 100% */
+	font-size: 62.5%;
+}
+body{
+	
+	box-sizing: border-box;
+}

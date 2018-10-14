@@ -1,0 +1,73 @@
+
+.btn{
+
+	/* Styling the link button on the header */
+	&:link,
+	&:visited{
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 10rem;
+		/* add transition for .btn as this is its initail state */
+		transition: all .2s;
+		position: relative;
+		font-size: 1.6rem;
+	}
+
+	&:hover{
+	/* button behaviour on hover */
+	transform: translateY(-3px);
+	/* box shadow on hover x y direction, blur , rgba shadow */
+	box-shadow: 0 .5rem 1rem rgba($colour-black, .2);
+
+	&::after{
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+}
+&:active{
+	/* button behaviour on clicking it */
+	transform: translateY(-1px);
+	box-shadow: 0 .5rem 1rem rgba($colour-black, .2);
+
+}
+&--white{
+	background-color: $colour-white;
+	color: $colour-grey-dark;
+
+	&::after{
+	background-color: $colour-white;
+}
+}
+/* create a pseudo button */
+&::after{
+
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 10rem;
+	/* hide it behind to the button */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: -1;
+	/* transition for btn:hover::after on this as its initial state; */
+	transition: all .4s;
+}
+
+
+
+
+&--animated{
+	/* animation name, animation duration
+	animation timing funtion animation delay  */
+	animation: moveInBottom .5s ease-out .75s;
+	/* apply animation of 0% before it starts */
+	animation-fill-mode: backwards;
+
+}
+}
+
