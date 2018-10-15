@@ -1,0 +1,38 @@
+.card{
+	//Perspective Helps for better rotation and must be put in the parent element
+	perspective: 150rem;
+	-moz-perspective: 150rem; //To make it work on mozilla
+	position: relative;
+
+	&__side{
+		background-color: green;
+		height: 50rem;
+		transition: all .8s;
+
+		//Put the cards on each other
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		&--front{
+
+		}
+
+		&--back{
+			transform: rotateY(180deg);
+			
+		}
+	}
+	
+
+	//Want the side to change when we hover the card
+	&:hover &__side--front{
+		transform: rotateY(180deg);
+	}
+	
+	&:hover &__side--back{
+		transform: rotateY(0);
+	}
+
+
+}
