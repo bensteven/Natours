@@ -19,9 +19,9 @@
 		// Remove the right margin from the last child in the col
 		&:not(:last-child) {
 		/*Add the margin right to all col except the last one */
-		margin-bottom: $gutter-horizontal;
+		margin-right: $gutter-horizontal;
 	
-	}
+		}
 	}
 
 	.col-1-of-2{
