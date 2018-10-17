@@ -31,3 +31,24 @@
 	position: relative;
 	padding: 15rem 0;
 }
+
+.section-book{
+	padding: 15rem 0;
+	background-image: linear-gradient(to right bottom, 
+	$colour-primary-light, 
+	$colour-primary-dark);
+}
+
+.book{
+	//adding two background
+	background-image: linear-gradient(105deg, rgba($colour-white, .9) 0%, rgba($colour-white, .9) 50%, transparent 50% ), url(../img/nat-10.jpg);
+	background-size: cover; // 100% and cover does the same thing
+	border-radius: 3px;
+	box-shadow: 0 1.5rem 4rem rgba($colour-black, .22);
+	height: 50rem;
+
+	&__form{
+		width: 50%;
+		padding: 6rem;
+	}
+}

@@ -1,0 +1,74 @@
+.form{
+	
+
+
+
+	&__group:not(:last-child){
+		margin-bottom: 2rem;
+	}
+
+
+	&__input{
+		font-size: 1.5rem;
+		font-family: inherit;
+		padding: 1.5rem 2rem;
+		color: inherit; // inherit color from parent element
+		border-radius: 2px;
+		background-color: rga($colour-white, .5);
+		border: none;
+		border-bottom: 3px solid transparent;
+		width: 90%;
+		display: block;
+		transition: all .3s;
+
+		
+		//remove the blue outline  when the input is focused on
+		&:focus {
+			outline: none;
+			box-shadow: 0 1rem 2rem rgba($colour-black, .1);
+			border-bottom: 3px solid $colour-primary;
+		}
+
+		// form validation using browsers capabilties
+		// when we have an invalid content in form input display
+		&:focus:invalid {
+			border-bottom: 3px solid $colour-secondary-dark;
+
+		}
+
+		&::-webkit-input-placeholder {
+			color: $colour-grey-dark-1;
+		}
+		
+
+	}
+
+
+	&__label{
+		font-size: 1.2rem;
+		font-weight: 700;
+		margin-left: 2rem;
+		margin-top: .7rem;
+		display: block;
+		transition: all .3s;
+
+	}
+	//style the adjacent sibling of the form grouo after input using +, ~ is when 
+	//there are other siblings before the label
+	&__input:placeholder-shown + &__label {
+		opacity: 0;
+		visibility: none;
+		transform: translateY(-4rem);
+
+	}
+
+	&__radio-group {
+		width: 49%;
+		display: inline-block;
+	}
+
+	&__radio-label{
+		font-size: $default-font-size;
+		cursor: pointer;
+	}
+}
