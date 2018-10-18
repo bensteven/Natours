@@ -10,6 +10,22 @@ html{
 	/* Default browser fontsize is 16px 
 	but we want ours to be 10px so we say 10px/16px x 100% */
 	font-size: 62.5%;
+
+	// Adding Responsiveness
+	//Always put larger queries before smaller ones
+	
+
+	@include respond(tab-land) {
+		font-size: 56.25%; // 1rem = 9px, 9/16px
+	}
+
+	@include respond(tab-port) {
+		font-size: 50%; // 1rem = 8px, 8/16px%, 
+	}
+
+	@include respond(big-desktop) {
+		font-size: 75%; //1rem = 12px , 12/16px
+	}
 }
 body{
 	
