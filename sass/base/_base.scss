@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: inherit;
+	
 }
 /* Set the root font size in the html tag then use rem in other tags */
 html{
@@ -11,7 +12,7 @@ html{
 	but we want ours to be 10px so we say 10px/16px x 100% */
 	font-size: 62.5%;
 
-	// Adding Responsiveness
+	// Adding Responsiveness for Desktop first
 	//Always put larger queries before smaller ones
 	
 
@@ -23,15 +24,24 @@ html{
 		font-size: 50%; // 1rem = 8px, 8/16px%, 
 	}
 
-	@include respond(phone) {
-		font-size: 30%; // 1rem = 4.8px, 4.8/16px%, 
-	}
-
 	@include respond(big-desktop) {
 		font-size: 75%; //1rem = 12px , 12/16px
 	}
+
+
+	
 }
 body{
 	
 	box-sizing: border-box;
+	padding: 3rem;
+	//Media query on body
+	@include respond(tab-port) {
+		// Remove padding at this view port
+		padding: 0;
+	}
 }
+
+
+//Sequence of adding responsiveness using media queries
+//Abstracts-base-layout(grid)-

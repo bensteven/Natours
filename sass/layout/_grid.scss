@@ -1,11 +1,22 @@
 .row{
 	max-width: $grid-width;
 	margin: 0 auto;
+
+	//Media Query
+	@include respond(tab-port){
+		max-width: 50rem;
+		padding: 0 3rem;
+	}
 	
 	// Remove the buttom margin from the last child in the row
 	&:not(:last-child) {
 		/*Add the margin bottom to all row except the last one */
 		margin-bottom: $gutter-vertical;
+
+		@include respond(tab-port){
+		
+			margin-bottom: $gutter-vertical-medium;
+		}
 	
 	}
 	
@@ -20,7 +31,19 @@
 		&:not(:last-child) {
 		/*Add the margin right to all col except the last one */
 		margin-right: $gutter-horizontal;
+			//Media query
+			@include respond(tab-port){
+		
+				margin-right: 0;
+				margin-bottom: $gutter-vertical-medium;
+			}
 	
+		}
+
+		//Media query
+		@include respond(tab-port){
+			
+			width: 100% !important;
 		}
 	}
 
