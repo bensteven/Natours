@@ -1,0 +1,89 @@
+.row{
+	max-width: $grid-width;
+	margin: 0 auto;
+
+	//Media Query
+	@include respond(tab-port){
+		max-width: 50rem;
+		padding: 0 3rem;
+	}
+	
+	// Remove the buttom margin from the last child in the row
+	&:not(:last-child) {
+		/*Add the margin bottom to all row except the last one */
+		margin-bottom: $gutter-vertical;
+
+		@include respond(tab-port){
+		
+			margin-bottom: $gutter-vertical-medium;
+		}
+	
+	}
+	
+	// remove effect of float on height and width of row
+	@include clearfix;
+	
+	// Select all class that starts with col-
+	[class^="col-"]{
+		float: left;
+
+		// Remove the right margin from the last child in the col
+		&:not(:last-child) {
+		/*Add the margin right to all col except the last one */
+		margin-right: $gutter-horizontal;
+			//Media query
+			@include respond(tab-port){
+		
+				margin-right: 0;
+				margin-bottom: $gutter-vertical-medium;
+			}
+	
+		}
+
+		//Media query
+		@include respond(tab-port){
+			
+			width: 100% !important;
+		}
+	}
+
+	.col-1-of-2{
+		// The width of the grid row - gutter-horizontal/2
+		width: calc((100% - #{$gutter-horizontal}) / 2);
+
+	}
+
+	.col-1-of-3{
+		// The width of the grid row - 2 * gutter-horizontal/3
+		width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+	
+	}
+
+	.col-2-of-3{
+		// The width .col-1-of-3 *2 + gutter horizontal
+		width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+	
+	}
+
+	.col-1-of-4{
+		// The width of the grid row - 2 * gutter-horizontal/3
+		width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+	
+	}
+
+	.col-2-of-4{
+		// The width of the grid row - 2 * gutter-horizontal/3
+		width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+	
+	}
+
+	.col-3-of-4{
+		// The width of the grid row - 2 * gutter-horizontal/3
+		width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+	
+	}
+
+
+
+}
+	
