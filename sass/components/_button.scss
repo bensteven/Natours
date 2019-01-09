@@ -1,0 +1,118 @@
+
+.btn{
+
+	/* Styling the link button on the header */
+	&,
+	&:link,
+	&:visited{
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 10rem;
+		/* add transition for .btn as this is its initail state */
+		transition: all .2s;
+		position: relative;
+		font-size: $default-font-size;
+
+		//Change for button element
+		border: none;
+		cursor: pointer
+	}
+	
+
+	&:hover{
+	/* button behaviour on hover */
+	transform: translateY(-3px);
+	/* box shadow on hover x y direction, blur , rgba shadow */
+	box-shadow: 0 .5rem 1rem rgba($colour-black, .2);
+
+	&::after{
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+}
+&:active,
+&:focus{
+	/* button behaviour on clicking it */
+	outline: none;
+	transform: translateY(-1px);
+	box-shadow: 0 .5rem 1rem rgba($colour-black, .2);
+
+}
+&--white{
+	background-color: $colour-white;
+	color: $colour-grey-dark;
+
+	&::after{
+	background-color: $colour-white;
+	}
+
+}
+
+&--green{
+	background-color: $colour-primary;
+	color: $colour-white;
+
+	&::after{
+	background-color: $colour-primary;
+	}
+}
+/* create a pseudo button */
+&::after{
+
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 10rem;
+	/* hide it behind to the button */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: -1;
+	/* transition for btn:hover::after on this as its initial state; */
+	transition: all .4s;
+}
+
+
+
+
+&--animated{
+	/* animation name, animation duration
+	animation timing funtion animation delay  */
+	animation: moveInBottom .5s ease-out .75s;
+	/* apply animation of 0% before it starts */
+	animation-fill-mode: backwards;
+
+}
+}
+
+.btn-text{
+	&:link,
+	&:visited{
+		font-size: $default-font-size;
+		color: $colour-primary;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: .1rem solid $colour-primary;
+		padding: .3rem;
+		transition: all .2s;
+	
+	}
+	
+	// When hovered
+	&:hover{
+		background-color: $colour-primary;
+		color: $colour-white;
+		box-shadow: 0 1rem 2rem  rgba($colour-black, .15);
+	    transform: translateY(-2px);
+	}
+
+	// When Clicked
+	&:active{
+		box-shadow: 0 .5rem 1rem  rgba($colour-black, .15);
+	    transform: translateY(0); //return back to position
+	}
+}
